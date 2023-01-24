@@ -2,6 +2,7 @@
   "name": "timers_app",
   "version": "1.1.0",
   "author": "Fullstack.io",
+  "homepage": "http://rafaeljimenez01.github.io/time_tracking_app",
   "scripts": {
     "go": "open http://localhost:3000; npm run server",
     "e2e": "nightwatch; npm run reset-data;",
@@ -9,7 +10,9 @@
     "reset-data": "cp data.json.pristine data.json",
     "test": "npm run reset-data; ./node_modules/.bin/concurrently -k 'npm run server' 'npm run e2e'",
     "server": "babel-node server.js",
-    "start": "npm run server"
+    "start": "npm run server",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build"
   },
   "babel": {
     "presets": [
@@ -27,6 +30,7 @@
     "path": "0.12.7"
   },
   "devDependencies": {
-    "concurrently": "2.2.0"
+    "concurrently": "2.2.0",
+    "gh-pages": "^5.0.0"
   }
 }
