@@ -14,8 +14,8 @@ class TimersDashboard extends React.Component {
 
   loadTimersFromServer = () => {
     client.getTimers((serverTimers) => (
-        this.setState({ timers: serverTimers })
-      )
+      this.setState({ timers: serverTimers })
+    )
     );
   };
   // ...
@@ -31,7 +31,6 @@ class TimersDashboard extends React.Component {
   handleTrashClick = (timerId) => {
     this.deleteTimer(timerId);
   };
-
   handleStartClick = (timerId) => {
     this.startTimer(timerId);
   };
